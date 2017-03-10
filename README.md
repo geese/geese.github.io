@@ -1,4 +1,4 @@
-[index.html](http://geese.github.io/index.html)
+[index.html](http://geese.github.io/geese_github_io/index.html)
 
 ## Welcome to GitHub Pages
 
