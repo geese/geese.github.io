@@ -1,3 +1,5 @@
+[index.html](http://geese.github.io/index.html)
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/geese/geese.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
