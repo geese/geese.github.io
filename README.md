@@ -1,6 +1,6 @@
 [index.html](http://geese.github.io/geese_github_io/index.html)
 
-#[ZAAMG](http://ec2-52-40-67-97.us-west-2.compute.amazonaws.com)
+###([ZAAMG](http://ec2-52-40-67-97.us-west-2.compute.amazonaws.com))
 
 ## Welcome to GitHub Pages
 
