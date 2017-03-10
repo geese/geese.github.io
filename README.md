@@ -1,5 +1,6 @@
 [index.html](http://geese.github.io/geese_github_io/index.html)
 
+<h3><a href="http://ec2-52-40-67-97.us-west-2.compute.amazonaws.com/zaamg" target="_blank">example</a></h3>
 [ZAAMG](http://ec2-52-40-67-97.us-west-2.compute.amazonaws.com)
 
 ## Welcome to GitHub Pages
