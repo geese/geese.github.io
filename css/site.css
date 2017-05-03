@@ -1,57 +1,169 @@
-#main_container{
-    width: 80%;
+@font-face {
+font-family: 'Raleway';
+src: url('../fonts/Raleway-Regular.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Raleway';
+src: url('../fonts/Raleway-Bold.ttf') format('truetype');
+font-weight: bold;
+font-style: normal;
+}
+
+div.outer-container{ 
+    background-color: #012929;
+    background: #283c86;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #036363, #012929);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #036363, #012929); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    overflow: auto;
+}
+
+
+div.wrapper { 
+    font-family: 'Raleway', sans-serif; font-size: 16px; color: #444; padding-top: 30px; 
+}
+
+
+
+
+div.heading-info span{
+    display: block;
+    text-align: right;
+}
+
+div.panel{ 
+    
+}
+
+div.panel-body{ 
+    overflow: auto;
+    /*overflow-y: auto;*/
+}
+
+div.panel-body .row{
+    margin: 0 20px;
+}
+
+div.panel h1{ 
+    margin: 20px 34px;
+    color:teal;
+}
+
+
+
+div.content-square-outer{
+    /*background-color: green;*/
+    height: 100%;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+div.panel-body div.row{
+    height: 256px;
+}
+
+
+span.title{
+    display: block;
+    height: 50px;
+    position: absolute;
+    top: 204px;     
+    width: 100%;
+    text-align: center;
+    line-height: 4em;
+    font-weight: bold;
+    background-color: #fff;
+    color: teal;
+    border-bottom: 2px solid teal;
+    overflow: hidden;
+}
+
+div.content-square-inner{
+    width: 100%;
+    height: 100%;
     margin: auto;
+    position: relative;
+    border: 1px solid #ddd;
 }
 
-
-div#label{
-    background-color: #e9e9e9;
-    width:70%;
-    margin: 20px 20px 20px 0px;
-    padding-left: 40px;
-    padding-right: 40px;
+div.content-square-inner:hover{
+    /*border: 1px solid teal;*/
 }
 
- table.cancelFees{
-                border-collapse: collapse;
-                border: 1px solid lightgrey;
-                width: 100%;
-                font-size: 1em;
-            }
+div#gol-square{    
+    background: url(../images/gol-animated-all.gif) no-repeat center top;
+    background-color: #fff;
+    background-size: 100%;
+}
 
-            table.cancelFees td{
-                padding: 0px 8px;
-            }
-            table.cancelFees td:first-child{
-                text-align: right;
-            }
+div#mahjong-square{    
+    background: url(../images/mahjong-animated.gif) no-repeat center top;
+    background-size: 100%;
+}
 
-            table.cancelFees td:last-child{
-                padding-left: 10%;
-                width: 55%;
-            }
-            table.cancelFees tr:first-child{
-                border-bottom: 1px solid lightgrey;
-                vertical-align: top;
-            }
-            .italic{
-                font-style:italic;
-            }
+div#slapjack-square{    
+    background: url(../images/slapjack-animated-2.gif) no-repeat center top;
+    background-size: 100%;
+}
 
-            table.eventsAndActions {
-                table-layout: fixed;
-                width: 100%;
-                margin:auto;
-                border-collapse: collapse;
-                margin-bottom: 2%;
-            }
-            table.eventsAndActions  td{
-                padding-left: 3%;
-                max-width: 33%;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            table.eventsAndActions tr:first-child{
-                border-bottom: 1px solid lightgrey;
-            }
+div#winebottle-square{    
+    background: url(../images/winebottle.PNG) no-repeat center top;
+    background-size: 100%;
+}
+
+div#zaamg-square{    
+    background: url(../images/zaamg.PNG) no-repeat center top;
+    background-size: 100%;
+}
+
+div#mixedup-square{    
+    background: url(../images/mixedup.PNG) no-repeat center top;
+    background-size: 100%;
+}
+
+div#database-square{    
+    background: url(../images/database.PNG) no-repeat center top;
+    background-size: 100%;
+}
+
+div#afaf-square{    
+    background: url(../images/afaf.PNG) no-repeat center top;
+    background-size: 100%;
+}
+
+div#gol-square:hover,
+div#gol-square:hover span,
+div#mahjong-square:hover,
+div#mahjong-square:hover span,
+div#slapjack-square:hover,
+div#slapjack-square:hover span,
+div#mixedup-square:hover,
+div#mixedup-square:hover span,
+div#winebottle-square:hover,
+div#winebottle-square:hover span,
+div#database-square:hover,
+div#database-square:hover span,
+div#zaamg-square:hover,
+div#zaamg-square:hover span,
+div#afaf-square:hover,
+div#afaf-square:hover span
+{
+    background-color: #edf5f5;
+    background-color: #eaecec;
+    cursor: pointer;
+}
+
+div#gol-square:hover,
+div#mahjong-square:hover,
+div#slapjack-square:hover,
+div#mixedup-square:hover,
+div#winebottle-square:hover,
+div#database-square:hover,
+div#zaamg-square:hover,
+div#afaf-square:hover,
+{
+    /*border: 1px solid teal;*/
+}
