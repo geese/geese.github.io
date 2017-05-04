@@ -30,11 +30,9 @@ button.close span{font-size: 2em;}
 }
 
 div.outer-container{ 
-    background-color: #012929;
-    background: #283c86;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #036363, #012929);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #036363, #012929); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: url('../images/office.png');
+    background-color: dimgray;
+    
+    background: url('../images/gray_sand.png');
     overflow: auto;
 }
 
