@@ -54,7 +54,7 @@ div.footer{
 div.heading-info a, div.heading-info span{
     display: block;
     text-align: right;
-    color: #333;
+    color: #555;
     font-weight: bold;
 }
 
@@ -90,7 +90,8 @@ div.panel h1, div.panel h2{
 }
 
 div.panel-heading h1{
-    color: #333;
+    color: #555;
+    font-size: 3em;
 }
 
 div.panel-body h2{
