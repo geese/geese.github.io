@@ -14,6 +14,410 @@
     
 </head>
 <body>
+    
+    
+<div class="modal fade" id="gol-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">Game of Life</h2>
+          <a href="content/GOL.jar" class="btn btn-primary">
+              Grab Runnable JAR</a>
+          <a href="https://github.com/geese/game-of-life" target="_blank" class="btn btn-success">
+              See in Github</a>
+          
+      </div>
+      <div class="modal-body">     
+          <p>This is the work of a novice programmer (me), written during my second semester of Object Oriented Programming at Salt Lake Community College.</p>
+          <p>You've never seen so many JPanels and JButtons all in once place!  Well, maybe you have...</p>
+          <p>Technically, it's a graphical representation of 
+              <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Conway's Game Of Life</a>.</p>
+          <hr>
+          <p style="text-align:center;">But <strong>seriously</strong>?  It's so much fun to play with!  You can draw on it and explode things!  You can choose colors and speed!</p>
+          <hr>
+          <div class="instructions" style="text-align: center;
+                                           overflow:hidden;">
+          <p>It even comes with instructions, visible when you click the button in its lower left corner:</p> 
+              <!--<div style="height: 360px; background: url('images/gol-instructions-arrow.PNG') no-repeat center;
+                          background-size: 50%;"></div>-->
+              <img src="images/gol-instructions-arrow.PNG" width=450/>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+<div class="modal fade" id="mahjong-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">Mahjong <small>game #20926 is easily winnable</small></h2>
+          <a href="content/mahjong.jar" class="btn btn-primary">
+              Grab Runnable JAR</a>
+          <a href="https://github.com/geese/mahjong" target="_blank" class="btn btn-success">
+              See in Github</a>
+          
+      </div>
+      <div class="modal-body">     
+          <p>This game was written for the course Object Oriented User Interface Development with Java, at Weber State University.</p>
+          <br/>
+          <p>Almost everything was <strong>"handdrawn"</strong> using the Java 2D API (java.awt.Graphics2D object).</p>
+          <br/>
+          <div class="well row">
+              <div class="col-sm-8" style="overflow:hidden;"><p style="color:#770b03;">The blank tile templates and the <strong>"bamboo sticks"</strong> were drawn and placed with code.</p>
+          <img src="images/bamboo-tiles.PNG"/></div>
+              <div class="col-sm-4" style="overflow:hidden;"><p style="color:#770b03;">The <strong>"White Dragon"</strong> was also drawn with code.</p>
+          <img src="images/white-dragon-tile.PNG"/></div>
+              
+              
+              </div>
+          <hr>
+          <p><strong>But wait, there's more!  There's calculus 2!</strong>&nbsp;&nbsp;(my idea&mdash;I'm very proud of it)</p>
+          <br/>
+          <div class="row">
+            <div class="col-sm-4">
+              <p>These circles are patterned with polar "rose" graphs translated into Java.<br/>Math is beautiful!</p>
+                <div style="height: 200px; background:url('images/circle-tiles.PNG') no-repeat;"></div>
+                <!--<img src="images/circle-tiles.PNG"/>-->
+            </div>
+             <div class="col-sm-4" style="height: 200px; background:url('images/polar-both.png') no-repeat;
+                                          background-size: 80%;">
+             <!--<img src="images/polar-both.png"/>-->
+             </div>
+              <div class="col-sm-4" style="height: 200px; overflow-y: scroll;">
+              <pre>
+private void draw_innerCircle(Graphics2D g2, Point center, int diameter, float stroke_width, Color color_light, Color color_dark){
+
+    int amp = (int)(5*diameter)/13;
+    double deltaTheta = Math.PI / 180 ;
+    int w = center.x;
+    int h = center.y;
+
+    path1.reset();
+    path1.moveTo(w+amp, h );
+
+    for (double theta = 0; theta <html>&lt;</html> Math.PI; theta += deltaTheta) {  // the polar graph called a "rose"...yay Calc 2!
+        double x = amp * Math.cos(3 * theta) * Math.cos(theta) + w;
+        double y = amp * Math.cos(3 * theta) * Math.sin(theta) + h;
+        path1.lineTo(x, y);
+    }
+
+    path2.reset();
+    path2.moveTo(w-amp, h );
+
+    for (double theta = 0; theta <html>&lt;</html>  Math.PI; theta += deltaTheta) {
+        double x = amp * Math.cos(3 * theta - Math.PI) * Math.cos(theta) + w;
+        double y = amp * Math.cos(3 * theta - Math.PI) * Math.sin(theta) + h;
+        path2.lineTo(x, y);
+    }
+
+    BasicStroke outlineStroke = new BasicStroke(stroke_width);
+    g2.setStroke(outlineStroke);
+
+    g2.setColor(color_dark);
+    g2.fillOval(w-(diameter/2), h-(diameter/2), diameter, diameter);
+
+    g2.setColor(color_light);
+    g2.draw(path1);
+    g2.draw(path2);
+
+    Graphics2D g2copy = (Graphics2D)g2.create();
+    Graphics2D g2copy1 = (Graphics2D)g2.create();
+
+    g2copy.translate(w-(.78*3*amp/2),h-(.78*3*amp/2));
+    g2copy.scale(.78, .78);
+    g2copy.drawOval(0, 0, 3 * amp, 3 * amp);
+
+    g2.setColor(color_dark);
+    g2.fillOval(w-(9*amp)/20, h-(9*amp)/20, (9*amp)/10, (9*amp)/10);
+
+
+    g2copy1.setColor(color_light);
+    g2copy1.translate(w-(.65*((9*amp)/20)),h-(.65*((9*amp)/20)));
+    g2copy1.scale(.65, .65);
+    g2copy1.drawOval(0, 0, (9*amp)/10, (9*amp)/10);
+
+    g2.dispose();
+
+}
+	
+public void draw_outerCircle(Graphics2D g2) {
+    int amp = 18;
+
+    double deltaTheta = Math.PI / 180 / 100 ;
+    int w = 45; //center
+    int h = 36+SHADOW_SIZE;
+
+    path3.reset();
+    path3.moveTo(w+amp, h );
+
+    for (double theta = 0; theta <html>&lt;</html> Math.PI; theta += deltaTheta) {
+        double x = amp * Math.cos(7 * theta) * Math.cos(theta) + w;
+        double y = amp * Math.cos(7 * theta) * Math.sin(theta) + h;
+        path3.lineTo(x, y);
+    }
+
+    path4.reset();
+    path4.moveTo(w-amp, h );
+
+    for (double theta = 0; theta <html>&lt;</html>  Math.PI; theta += deltaTheta) {
+        double x = amp * Math.cos(7 * theta - Math.PI) * Math.cos(theta) + w;
+        double y = amp * Math.cos(7 * theta - Math.PI) * Math.sin(theta) + h;
+        path4.lineTo(x, y);
+    }
+
+    BasicStroke outlineStroke = new BasicStroke(1.5f);
+    g2.setStroke(outlineStroke);
+
+    g2.setColor(DARK_GREEN);
+    g2.fillOval(w-25,h-25, 50, 50);
+
+    g2.setColor(LIGHT_GREEN);
+    g2.draw(path3);
+    g2.draw(path4);
+
+    outlineStroke = new BasicStroke(3f);
+    g2.setStroke(outlineStroke);
+
+    g2.translate(w-.9*25, h-.9*25);
+    g2.scale(.9, .9);
+    g2.drawOval(0, 0, 50, 50);
+
+    g2.dispose();
+}                
+              </pre>
+              </div>
+          </div>
+          
+          
+          
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+<div class="modal fade" id="slapjack-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">Slapjack, 2016 Presidential Election Edition</h2>
+          <a href="content/Slapjack.jar" class="btn btn-primary">
+              Grab Runnable JAR</a>
+          <a href="https://github.com/geese/CS3750SlapJack_Group1" target="_blank" class="btn btn-success">
+              See in Github</a>
+          
+      </div>
+      <div class="modal-body">     
+          <p>This game was written for the course Software Engineering II, at Weber State University.</p>
+          
+          <p>Card layering and messy misalignment (rotations) done with Java Swing and AWT 2D Graphics.</p>
+        <div class="well">
+          <p><strong>Slapjack, 2016 Presidential Election Edition</strong>, is a two-player game complete with shuffling and slapping sounds!  
+              <br/>You can set your own hotkeys to turn your top card over and slap the center pile when you see either Hillary or the Donald!</p>
+          </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+<div class="modal fade" id="mixedup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          
+        <h2 class="modal-title" id="myModalLabel">MixedUp Meal Calculator for Android</h2>
+          <a href="https://play.google.com/store/apps/details?id=com.chodos.gisela.mixedup&hl=en" class="btn btn-primary" target="_blank">
+              Google Play Store Listing</a>
+          <!--<a href="https://github.com/geese/summer-project" target="_blank" class="btn btn-success">
+              See in Github</a>-->
+          
+      </div>
+      <div class="modal-body">    
+          <div style="height: 250px; background:url('images/mixedup-feature.png') no-repeat;
+                      background-size: 50%;"></div>
+          <br/>
+          <p><strong>MixedUp was the final project in my Summer Android App Development course at Weber State University, with Professor Rob Hilton.</strong></p>
+          <div class="well">
+          <p><strong>MixedUp is more</strong> than just a school project.  I use this app myself!  In fact, I wanted it a few years ago, so I had to make it. <br/> It pairs well with the MyFitnessPal app.</p>
+              <p>I am excited that it is available for download in the Google Play Store.  So far it has been installed by users in more than <strong>ten different countries!</strong>  <br/>My next update will make it available in different languages, to better serve these worldwide users.</p>
+          </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+<div class="modal fade" id="zaamg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          
+        <h2 class="modal-title" id="myModalLabel">ZAAMG Schedule Viewer Single-Page Web App</h2>
+          <a href="http://ec2-52-40-67-97.us-west-2.compute.amazonaws.com/zaamg/index.html" 
+             target="_blank" class="btn btn-primary">
+              See Online in its AWS Home</a>
+          <a href="https://github.com/geese/ZAAMG" target="_blank" class="btn btn-success">
+              See in Github</a>
+          
+      </div>
+      <div class="modal-body">     
+          <p>ZAAMG is a <strong>single-page web app</strong> written as the final project for my Software Engineering II course at Weber State University, with professor Spencer Hilton.</p>
+          <p>It consists of <strong>PHP, Javascript, and a MySQL database, and makes heavy use of AJAX.</strong></p>
+          <p>ZAAMG is a tool to assist WSU faculty in arranging a schedule of courses, professors, and classrooms for upcoming semesters.  It gives a visual overview of the days, times, professors, and locations that have been assigned to course sections, so that conflicts may easily be discovered and averted.  It also generates an Excel spreadsheet report of a finalized schedule, to be given to the department secretary.</p>
+          <p>ZAAMG provides an easy-to-use interface for creating database records of the various "resources" which comprise a course Section.  A Section has a Course, a Professor, and a Classroom.  Before creating Section records, the user must first create database records of:</p>
+          <ul style="margin:auto; width: 30%; margin-bottom: 40px;">
+          <li>Departments</li>
+          <li>Semesters</li>
+          <li>Campuses (Campi!)</li>
+          <li>Buildings</li>
+          <li>Classrooms</li>
+          <li>Professors</li>
+          <li>Courses</li>
+          </ul>
+          <hr>
+          <p style="text-align:center;"><strong>Forms for Creating, Editing, and Deleting these records appear as Bootstrap modals.</strong></p>
+          <div class="row zaamg" style="margin-bottom: 40px;">
+          
+          <div class="col-sm-5 col-sm-push-1" style="height: 260px; background:url('images/zaamg-create.PNG') no-repeat center; background-size: 100%;"></div>
+          <div class="col-sm-5 col-sm-push-1" style="height: 260px; background:url('images/zaamg-edit.PNG') no-repeat center; background-size: 100%;"></div>
+          </div>
+          <hr>
+          <p style="text-align:center;"><strong>Sections, Professors, and Classrooms may also be edited inline.</strong></p>
+          <div class="row zaamg" style="margin-bottom: 40px;">
+                <div class="col-sm-5 col-sm-push-1" style="height: 260px; background:url('images/zaamg-inline-edit.PNG') no-repeat center; background-size: 100%;"></div>
+                <div class="col-sm-5 col-sm-push-1" style="height: 260px; background:url('images/zaamg-inline-edit-prof.PNG') no-repeat center; background-size: 100%;"></div>
+          </div>
+          <hr>
+          <p style="text-align:center;"><strong>The best part is the highly-customized calendar views, adapted from <a href="https://fullcalendar.io/" target="_blank">FullCalendar.io</a>.</strong></p>
+          <hr>
+          <p style="text-align:center;"><strong>Inline calendar views for individual profs and rooms:</strong></p>
+          <div class="row zaamg" style="margin-bottom: 40px;">
+                <div class="col-sm-5 col-sm-push-1" style="height: 260px; background:url('images/zaamg-inline-prof-calendar.PNG') no-repeat center; background-size: 100%;"></div>
+                <div class="col-sm-5 col-sm-push-1" style="height: 260px; background:url('images/zaamg-inline-room-calendar.PNG') no-repeat center; background-size: 100%;"></div>
+          </div>
+          
+          <hr>
+          <p style="text-align:center;"><strong>Overview of Sections for all Professors and Classrooms in a Building (Scrollable)</strong></p>
+          <div class="row zaamg" style="margin-bottom: 40px;">
+                <div class="col-sm-5 col-sm-push-1" style="height: 260px; background:url('images/zaamg-prof-overview.PNG') no-repeat center; background-size: 100%;"></div>
+                <div class="col-sm-5 col-sm-push-1" style="height: 260px; background:url('images/zaamg-room-overview.PNG') no-repeat center; background-size: 100%;"></div>
+          </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+<div class="modal fade" id="database-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          
+        <h2 class="modal-title" id="myModalLabel">Advanced Database Programming Final Project</h2>
+          <a href="http://ec2-52-40-67-97.us-west-2.compute.amazonaws.com/CS3550_FinalProject/" 
+             target="_blank" class="btn btn-primary">
+              See Project Description and Code</a>
+          
+      </div>
+      <div class="modal-body">     
+          <p>Clicking the button above will open a webpage with the description and database coding guts of the final project for the course<br/><strong>Advanced Database Programming</strong>, at Weber State University.</p>
+          <p>The descriptive website makes use of <strong>nested Bootstrap accordions</strong>, which always fascinates me a little.</p>
+          <p>I created a fictitious business (a musician-ensemble booking agency) for which I designed a database in <strong>MySQL</strong>, which loosely tied in to another database in <strong>SQL Server</strong> for another fictitious business (resort management).</p>
+          <hr>
+          <p style="text-align:center;"><strong>My business description, rules, ERD, and all scripts are available for peeking.<br/>For example:</strong></p>
+          <pre>
+DROP TRIGGER IF EXISTS tr_isLodgingRequired;
+
+DELIMITER //
+
+CREATE TRIGGER tr_IsLodgingRequired
+	BEFORE UPDATE ON Contract FOR EACH ROW
+	BEGIN
+	IF NEW.ContractStatus = 'B'
+	THEN
+		IF isLodgingRequired(NEW.ContractID)= 1
+                    AND OLD.Lodging != 'Reserved'
+                    AND OLD.Lodging != 'Required'
+		THEN
+
+		SET NEW.Lodging = 'Required';
+		END IF;
+	END IF;
+END //
+          </pre>
+          
+          
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+<div class="modal fade" id="winebottle-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          
+        <h2 class="modal-title" id="myModalLabel">How to Open a Wine Bottle: A Simple Guide</h2>
+          <a href="content/opening-wine-bottle.pdf" 
+             target="_blank" class="btn btn-primary">
+              Open the Guide PDF</a>
+          
+      </div>
+      <div class="modal-body">    
+          <div  style="text-align:center;">
+          <p>It's true, I produced this Simple Guide for my Technical Writing course at Salt Lake Community College.</p>
+              <p><strong>But it's more true that I wrote it for myself.</strong></p>  
+              <p>It used to be that whenever I tried to open a wine bottle, I got confused.  I decided it was time to nail this operation down once and for all. </p>
+              <p>I love this fun little guide, and I hope it will do some good in the world!</p>
+              <hr>
+              <object data="content/opening-wine-bottle.pdf" type="application/pdf" width="30%" height="1020px"> 
+  <p>It appears you don't have a PDF plugin for this browser.
+   No biggie... you can <a href="resume.pdf">click here to
+  download the PDF file.</a></p>  
+ </object>
+          </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
 <div class="outer-container">
 <div class="container wrapper">
 <div class="panel panel-default">
@@ -22,7 +426,7 @@
     
     <div class="row">
          <div class="col-sm-8">
-             <h2>Gisela "Geese" Chodos</h2>
+             <h1>Gisela "Geese" Chodos</h1>
          </div>
         <div class="heading-info col-sm-4">
         <span>gisela.chodos@gmail.com</span>
@@ -33,61 +437,61 @@
 </div>
 
 <div class="panel-body">
-    <h1>Portfolio</h1>
+    <h2>Portfolio <small>click a tile for info</small></h2>
     <div class="row">
         <div class="content-square-outer col-sm-6 col-md-3">
-            <div class="content-square-inner" id="gol-square"> 
+            <div class="content-square-inner" id="gol-square" data-toggle="modal" data-target="#gol-modal"> 
             <span class="title">Java Game Of Life</span>
             </div>
         </div>
         <div class="content-square-outer col-sm-6 col-md-3">
-            <div class="content-square-inner" id="mahjong-square">
-            <span class="title">Java Mahjong</span>
+            <div class="content-square-inner" id="mahjong-square" data-toggle="modal" data-target="#mahjong-modal">
+            <span class="title">Java&nbsp;Mahjong&nbsp;with&nbsp;Calculus&nbsp;II</span>
             </div>
         </div>
         <div class="content-square-outer col-sm-6 col-md-3">
-            <div class="content-square-inner" id="slapjack-square">
+            <div class="content-square-inner" id="slapjack-square" data-toggle="modal" data-target="#slapjack-modal">
             <span class="title">Java&nbsp;Election&nbsp;Slapjack</span>
             </div>
         </div>
     
         <div class="content-square-outer col-sm-6 col-md-3">
-            <div class="content-square-inner" id="mixedup-square">
+            <div class="content-square-inner" id="mixedup-square" data-toggle="modal" data-target="#mixedup-modal">
             <span class="title">Android&nbsp;MixedUp&nbsp;Meal&nbsp;App</span>
             </div>
         </div>
         <div class="content-square-outer col-sm-6 col-md-3">
-            <div class="content-square-inner" id="zaamg-square">
+            <div class="content-square-inner" id="zaamg-square" data-toggle="modal" data-target="#zaamg-modal">
             <span class="title">Schedule&nbsp;Viewer&nbsp;Web&nbsp;App</span>
             </div>
         </div>
         
         <div class="content-square-outer col-sm-6 col-md-3">
-            <div class="content-square-inner" id="database-square">
+            <div class="content-square-inner" id="database-square" data-toggle="modal" data-target="#database-modal">
             <span class="title">Advanced&nbsp;Database&nbsp;Project</span>
             </div>
         </div>       
         <div class="content-square-outer col-sm-6 col-md-3">
-            <div class="content-square-inner" id="winebottle-square">
+            <div class="content-square-inner" id="winebottle-square" data-toggle="modal" data-target="#winebottle-modal">
             <span class="title">Wine Bottle How-To</span>
             </div>
         </div>
     
         
         <div class="content-square-outer col-sm-6 col-md-3">
-            <div class="content-square-inner" id="afaf-square">
-            <span class="title">AFAF&nbsp;Website&mdash;Coming&nbsp;Soon!</span>
+            <div class="content-square-inner" style="cursor: default;" id="afaf-square">
+            <span class="title"  style="cursor: default;">AFAF&nbsp;Website&mdash;Coming&nbsp;Soon!</span>
             </div>
-        </div>
-        
+        </div>        
        
     </div>
      
     
 </div>
     
-</div>
-    </div>
-    </div>
+</div>  <!--end of panel-->
+</div> <!--end of wrapper-->
+    <div class="footer container">portfolio page designed by Gisela</div>
+</div> <!--end of outer-container-->
 </body>
 </html>

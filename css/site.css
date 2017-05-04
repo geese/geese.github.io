@@ -12,21 +12,46 @@ font-weight: bold;
 font-style: normal;
 }
 
+.modal-lg{
+    min-width: 90%;
+}
+
+.modal-title{ 
+    padding-bottom: 10px;
+}
+
+button.close span{font-size: 2em;}
+
+.modal pre { 
+    background-color: #333;
+    border: 2px solid black;
+    color: #6ffb75;
+    font-size: 1.1em;
+}
+
 div.outer-container{ 
     background-color: #012929;
     background: #283c86;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #036363, #012929);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #036363, #012929); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: url('../images/office.png');
     overflow: auto;
 }
 
 
-div.wrapper { 
-    font-family: 'Raleway', sans-serif; font-size: 16px; color: #444; padding-top: 30px; 
+div.wrapper, div.modal{ 
+    font-family: 'Raleway', sans-serif; font-size: 16px; color: #444;
 }
 
+div.wrapper{ padding-top: 30px; }
 
+
+div.footer{
+    margin: 20px auto;
+    padding-left: 16px;
+    font-size: 1.1em;
+    color: #eee;
+}
 
 
 div.heading-info span{
@@ -40,6 +65,7 @@ div.panel{
 
 div.panel-body{ 
     overflow: auto;
+    background: url('../images/cream_pixels.png');
     /*overflow-y: auto;*/
 }
 
@@ -47,11 +73,14 @@ div.panel-body .row{
     margin: 0 20px;
 }
 
-div.panel h1{ 
+div.panel h1, div.panel h2{ 
     margin: 20px 34px;
-    color:teal;
 }
 
+
+div.panel-body h2{
+    color: teal;    
+}
 
 
 div.content-square-outer{
@@ -86,7 +115,7 @@ div.content-square-inner{
     height: 100%;
     margin: auto;
     position: relative;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
 }
 
 div.content-square-inner:hover{
@@ -100,38 +129,45 @@ div#gol-square{
 }
 
 div#mahjong-square{    
-    background: url(../images/mahjong-animated.gif) no-repeat center top;
+    background: url(../images/mahjong-animated.gif) no-repeat center top;    
+    background-color: #fff;
     background-size: 100%;
 }
 
 div#slapjack-square{    
     background: url(../images/slapjack-animated-2.gif) no-repeat center top;
-    background-size: 100%;
+    background-size: 100%;      
+    background-color: #fff;
 }
 
 div#winebottle-square{    
     background: url(../images/winebottle.PNG) no-repeat center top;
     background-size: 100%;
+    background-color: #fff;
 }
 
 div#zaamg-square{    
     background: url(../images/zaamg.PNG) no-repeat center top;
     background-size: 100%;
+    background-color: #fff;
 }
 
 div#mixedup-square{    
     background: url(../images/mixedup.PNG) no-repeat center top;
     background-size: 100%;
+    background-color: #fff;
 }
 
 div#database-square{    
     background: url(../images/database.PNG) no-repeat center top;
     background-size: 100%;
+    background-color: #fff;
 }
 
 div#afaf-square{    
     background: url(../images/afaf.PNG) no-repeat center top;
     background-size: 100%;
+    background-color: #fff;
 }
 
 div#gol-square:hover,
@@ -153,6 +189,7 @@ div#afaf-square:hover span
 {
     background-color: #edf5f5;
     background-color: #eaecec;
+    background-color: #efebeb;
     cursor: pointer;
 }
 
