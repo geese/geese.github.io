@@ -30,8 +30,7 @@ button.close span{font-size: 2em;}
 }
 
 div.outer-container{ 
-    background-color: dimgray;
-    
+    background-color: dimgray;    
     background: url('../images/gray_sand.png');
     overflow: auto;
 }
@@ -52,19 +51,34 @@ div.footer{
 }
 
 
-div.heading-info span{
+div.heading-info a, div.heading-info span{
     display: block;
     text-align: right;
+    color: #333;
+    font-weight: bold;
 }
 
-div.panel{ 
-    
+div.heading-info a:hover{
+    text-decoration: none;
+    color: teal;
+}
+
+div.heading-info a:focus{
+    text-decoration: none;
+}
+
+div.panel-default{ 
+    border: 1px solid teal;
 }
 
 div.panel-body{ 
     overflow: auto;
     background: url('../images/cream_pixels.png');
     /*overflow-y: auto;*/
+}
+
+div.panel-default > div.panel-heading{
+    border-bottom: 1px solid teal;
 }
 
 div.panel-body .row{
@@ -75,6 +89,9 @@ div.panel h1, div.panel h2{
     margin: 20px 34px;
 }
 
+div.panel-heading h1{
+    color: #333;
+}
 
 div.panel-body h2{
     color: teal;    
