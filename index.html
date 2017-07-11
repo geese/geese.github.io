@@ -16,6 +16,40 @@
 <body>
     
     
+<div class="modal fade" id="mixedup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          
+        <h2 class="modal-title" id="myModalLabel">MixedUp Meal Calculator for Android</h2>
+          <a href="https://play.google.com/store/apps/details?id=com.chodos.gisela.mixedup&hl=en" class="btn btn-primary" target="_blank">
+              Google Play Store Listing</a>
+          <!--<a href="https://github.com/geese/summer-project" target="_blank" class="btn btn-success">
+              See in Github</a>-->
+          
+      </div>
+      <div class="modal-body">    
+          <div style="height: 250px; background:url('images/mixedup-feature.png') no-repeat;
+                      background-size: 50%;"></div>
+          <br/>
+          <p><strong>MixedUp was the final project in my Summer Android App Development course at Weber State University, with Professor Rob Hilton.</strong></p>
+          <div class="well">
+          <p><strong>MixedUp is more</strong> than just a school project.  I use this app myself!  In fact, I wanted it a few years ago, so I had to make it. <br/> It pairs well with the MyFitnessPal app.</p>
+              
+              <p style="margin: 20px 40px"><strong>MixedUp fetches <span class="color-highlight">JSON</span> data from the <span class="color-highlight">REST API</span> provided by Nutritionix.com.  Food lists, meal lists, and nutritional data is stored in the app's <span class="color-highlight">SQLite</span> database.</strong></p>
+              
+              <p>I am excited that it is available for download in the Google Play Store.  So far it has been installed by over 80 users worldwide. <br/>My next update will make it available in different languages.</p>
+          </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>    
+    
 <div class="modal fade" id="gol-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -243,36 +277,7 @@ public void draw_outerCircle(Graphics2D g2) {
 </div>
     
 
-<div class="modal fade" id="mixedup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          
-        <h2 class="modal-title" id="myModalLabel">MixedUp Meal Calculator for Android</h2>
-          <a href="https://play.google.com/store/apps/details?id=com.chodos.gisela.mixedup&hl=en" class="btn btn-primary" target="_blank">
-              Google Play Store Listing</a>
-          <!--<a href="https://github.com/geese/summer-project" target="_blank" class="btn btn-success">
-              See in Github</a>-->
-          
-      </div>
-      <div class="modal-body">    
-          <div style="height: 250px; background:url('images/mixedup-feature.png') no-repeat;
-                      background-size: 50%;"></div>
-          <br/>
-          <p><strong>MixedUp was the final project in my Summer Android App Development course at Weber State University, with Professor Rob Hilton.</strong></p>
-          <div class="well">
-          <p><strong>MixedUp is more</strong> than just a school project.  I use this app myself!  In fact, I wanted it a few years ago, so I had to make it. <br/> It pairs well with the MyFitnessPal app.</p>
-              <p>I am excited that it is available for download in the Google Play Store.  So far it has been installed by users in more than <strong>ten different countries!</strong>  <br/>My next update will make it available in different languages, to better serve these worldwide users.</p>
-          </div>
-          
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+
     
     
 <div class="modal fade" id="zaamg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -447,6 +452,11 @@ END //
     <h2>Portfolio <small>click a tile for info</small></h2>
     <div class="row">
         <div class="content-square-outer col-sm-6 col-md-3">
+            <div class="content-square-inner" id="mixedup-square" data-toggle="modal" data-target="#mixedup-modal">
+            <span class="title">Android&nbsp;MixedUp&nbsp;Meal&nbsp;App</span>
+            </div>
+        </div>
+        <div class="content-square-outer col-sm-6 col-md-3">
             <div class="content-square-inner" id="gol-square" data-toggle="modal" data-target="#gol-modal"> 
             <span class="title">Java Game Of Life</span>
             </div>
@@ -462,11 +472,7 @@ END //
             </div>
         </div>
     
-        <div class="content-square-outer col-sm-6 col-md-3">
-            <div class="content-square-inner" id="mixedup-square" data-toggle="modal" data-target="#mixedup-modal">
-            <span class="title">Android&nbsp;MixedUp&nbsp;Meal&nbsp;App</span>
-            </div>
-        </div>
+        
         <div class="content-square-outer col-sm-6 col-md-3">
             <div class="content-square-inner" id="zaamg-square" data-toggle="modal" data-target="#zaamg-modal">
             <span class="title">Schedule&nbsp;Viewer&nbsp;Web&nbsp;App</span>

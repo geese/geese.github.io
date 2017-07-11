@@ -186,6 +186,10 @@ div#afaf-square{
     background-color: #fff;
 }
 
+span.color-highlight{
+    color: rgba(9, 177, 9, 1);
+}
+
 div#gol-square:hover,
 div#gol-square:hover span,
 div#mahjong-square:hover,
