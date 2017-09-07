@@ -1,0 +1,17 @@
+﻿changed address of zaamg to icarus
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# Explicit paths specified without -i or -o; assuming --only paths...
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   index.html
+#
+# Changes not staged for commit:
+#	modified:   content/resume-Gisela-Chodos.docx
+#	deleted:    content/~$sume-Gisela-Chodos.docx
+#	deleted:    content/~WRL0003.tmp
+#
+
